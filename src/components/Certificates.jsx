@@ -1,21 +1,25 @@
+import javascriptCourseImg from '../assets/javascript-course.jpg'
+import htmlCssCourseImg from '../assets/html-css-course.jpg'
+
 const certificates = [
   {
     title: 'JavaScript Course',
     issuer: 'Nouvil Platform',
     date: 'August 2025',
-    image: '/javascript-course.jpg',
+    image: javascriptCourseImg,
   },
   {
     title: 'HTML and CSS Course',
     issuer: 'Nouvil Platform',
     date: 'August 2025',
-    image: '/html-css-course.jpg',
+    image: htmlCssCourseImg,
   },
 ]
 
 function Certificates() {
   return (
-<section id="certificates" className="reveal py-24 px-6 max-w-4xl mx-auto scroll-mt-20 bg-[#0f0f14]">      <h2 className="text-3xl font-bold text-white mb-4 text-center">
+    <section id="certificates" className="reveal py-24 px-6 max-w-4xl mx-auto scroll-mt-20 bg-[#0f0f14]">
+      <h2 className="text-3xl font-bold text-white mb-4 text-center">
         My <span className="text-[#7F77DD]">Certificates</span>
       </h2>
       <p className="text-gray-400 mb-12 text-center">

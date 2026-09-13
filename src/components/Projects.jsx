@@ -4,7 +4,7 @@ const projects = [
     description:
       'A movie and TV discovery app built with React and the TMDB API, featuring live search, trending titles, and a favorites system with localStorage persistence.',
     tech: 'React, Tailwind CSS, TMDB API, React Router',
-    image: '/projects/movie-explorer.png',
+    image: `${import.meta.env.BASE_URL}projects/movie-explorer.png`,
     github: 'https://github.com/mohamedabdellahalsayed-source/movie-explorer',
     live: 'https://mohamedabdellahalsayed-source.github.io/movie-explorer/',
   },
@@ -13,7 +13,7 @@ const projects = [
     description:
       'An Arabic (RTL) e-commerce storefront with product search, category filtering, and a shopping cart with live item count.',
     tech: 'HTML, CSS, JavaScript',
-    image: '/projects/ecommerce-store.png',
+    image: `${import.meta.env.BASE_URL}projects/ecommerce-store.png`,
     github: 'https://github.com/mohamedabdellahalsayed-source/ecommerce-store',
     live: 'https://mohamedabdellahalsayed-source.github.io/ecommerce-store/',
   },
@@ -22,7 +22,7 @@ const projects = [
     description:
       'A clean admin dashboard UI displaying user, post, and product stats alongside a detailed product table.',
     tech: 'HTML, CSS, JavaScript, Font Awesome',
-    image: '/projects/admin-dashboard.png',
+    image: `${import.meta.env.BASE_URL}projects/admin-dashboard.png`,
     github: 'https://github.com/mohamedabdellahalsayed-source/admin-dashboard',
     live: 'https://mohamedabdellahalsayed-source.github.io/admin-dashboard/',
   },
@@ -31,7 +31,7 @@ const projects = [
     description:
       'A product management system supporting full create, read, update, and delete operations with search by title or category.',
     tech: 'HTML, CSS, JavaScript',
-    image: '/projects/crud-dashboard.png',
+    image: `${import.meta.env.BASE_URL}projects/crud-dashboard.png`,
     github: 'https://github.com/mohamedabdellahalsayed-source/crud-product-management',
     live: 'https://mohamedabdellahalsayed-source.github.io/crud-product-management/',
   },
@@ -40,7 +40,7 @@ const projects = [
     description:
       'A stylish landing page for a coffee shop, focused on clean layout and an inviting hero section.',
     tech: 'HTML, CSS, JavaScript',
-    image: '/projects/caffeine-cove.png',
+    image: `${import.meta.env.BASE_URL}projects/caffeine-cove.png`,
     github: 'https://github.com/mohamedabdellahalsayed-source/-caffeine-cove',
     live: 'https://mohamedabdellahalsayed-source.github.io/-caffeine-cove/',
   },
@@ -48,7 +48,8 @@ const projects = [
 
 function Projects() {
   return (
-<section id="projects" className="reveal py-24 px-6 max-w-6xl mx-auto scroll-mt-20 bg-[#0f0f14]">      <h2 className="text-3xl font-bold text-white mb-4 text-center">
+    <section id="projects" className="reveal py-24 px-6 max-w-6xl mx-auto scroll-mt-20 bg-[#0f0f14]">
+      <h2 className="text-3xl font-bold text-white mb-4 text-center">
         My <span className="text-[#7F77DD]">Projects</span>
       </h2>
       <p className="text-gray-400 mb-12 text-center">
