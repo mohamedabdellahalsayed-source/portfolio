@@ -21,7 +21,7 @@ const projects = [
     title: 'Admin Dashboard',
     description:
       'A clean admin dashboard UI displaying user, post, and product stats alongside a detailed product table.',
-    tech: 'HTML, CSS, JavaScript, Font Awesome',
+    tech: 'HTML, CSS, Font Awesome',
     image: `${import.meta.env.BASE_URL}projects/admin-dashboard.png`,
     github: 'https://github.com/mohamedabdellahalsayed-source/admin-dashboard',
     live: 'https://mohamedabdellahalsayed-source.github.io/admin-dashboard/',
@@ -39,7 +39,7 @@ const projects = [
     title: 'Caffeine Cove',
     description:
       'A stylish landing page for a coffee shop, focused on clean layout and an inviting hero section.',
-    tech: 'HTML, CSS, JavaScript',
+    tech: 'HTML, CSS',
     image: `${import.meta.env.BASE_URL}projects/caffeine-cove.png`,
     github: 'https://github.com/mohamedabdellahalsayed-source/-caffeine-cove',
     live: 'https://mohamedabdellahalsayed-source.github.io/-caffeine-cove/',
