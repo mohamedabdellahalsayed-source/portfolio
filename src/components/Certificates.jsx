@@ -2,13 +2,13 @@ const certificates = [
   {
     title: 'JavaScript Course',
     issuer: 'Nouvil Platform',
-    date: 'August 2025',
+    date: 'August 2026',
     image: `${import.meta.env.BASE_URL}javascript-course.jpg`,
   },
   {
     title: 'HTML and CSS Course',
     issuer: 'Nouvil Platform',
-    date: 'August 2025',
+    date: 'August 2026',
     image: `${import.meta.env.BASE_URL}html-css-course.jpg`,
   },
 ]
