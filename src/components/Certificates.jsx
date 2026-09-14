@@ -1,18 +1,15 @@
-import javascriptCourseImg from '../assets/javascript-course.jpg'
-import htmlCssCourseImg from '../assets/html-css-course.jpg'
-
 const certificates = [
   {
     title: 'JavaScript Course',
     issuer: 'Nouvil Platform',
     date: 'August 2025',
-    image: javascriptCourseImg,
+    image: `${import.meta.env.BASE_URL}javascript-course.jpg`,
   },
   {
     title: 'HTML and CSS Course',
     issuer: 'Nouvil Platform',
     date: 'August 2025',
-    image: htmlCssCourseImg,
+    image: `${import.meta.env.BASE_URL}html-css-course.jpg`,
   },
 ]
 

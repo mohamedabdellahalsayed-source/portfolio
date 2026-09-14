@@ -18,7 +18,7 @@ function Hero() {
           rel="noopener noreferrer"
           className="w-10 h-10 rounded-full bg-[#1f2028] flex items-center justify-center hover:bg-[#7F77DD] transition"
         >
-          <img src="/github-icon.svg" alt="GitHub" className="w-5 h-5" />
+          <img src={`${import.meta.env.BASE_URL}github-icon.svg`} alt="GitHub" className="w-5 h-5" />
         </a>
 
         <a
@@ -27,7 +27,7 @@ function Hero() {
           rel="noopener noreferrer"
           className="w-10 h-10 rounded-full bg-[#1f2028] flex items-center justify-center hover:bg-[#7F77DD] transition"
         >
-          <img src="/linkedin-icon.svg" alt="LinkedIn" className="w-5 h-5" />
+          <img src={`${import.meta.env.BASE_URL}linkedin-icon.svg`} alt="LinkedIn" className="w-5 h-5" />
         </a>
 
         <a
@@ -36,7 +36,7 @@ function Hero() {
           rel="noopener noreferrer"
           className="w-10 h-10 rounded-full bg-[#1f2028] flex items-center justify-center hover:bg-[#7F77DD] transition"
         >
-          <img src="/facebook-icon.svg" alt="Facebook" className="w-5 h-5" />
+          <img src={`${import.meta.env.BASE_URL}facebook-icon.svg`} alt="Facebook" className="w-5 h-5" />
         </a>
       </div>
 

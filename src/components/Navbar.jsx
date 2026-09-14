@@ -4,9 +4,10 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const handleDownload = () => {
-    window.open('/Mohamed_Abdellah_CV.pdf', '_blank')
+    const cvPath = `${import.meta.env.BASE_URL}Mohamed_Abdellah_CV.pdf`
+    window.open(cvPath, '_blank')
     const link = document.createElement('a')
-    link.href = '/Mohamed_Abdellah_CV.pdf'
+    link.href = cvPath
     link.download = 'Mohamed_Abdellah_CV.pdf'
     link.click()
   }
