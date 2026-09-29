@@ -44,6 +44,15 @@ const projects = [
     github: 'https://github.com/mohamedabdellahalsayed-source/-caffeine-cove',
     live: 'https://mohamedabdellahalsayed-source.github.io/-caffeine-cove/',
   },
+  {
+    title: 'CodeCraft',
+    description:
+      'An Arabic (RTL) landing page for a professional software company, featuring a modern dark design with sections for services, portfolio, team, and contact.',
+    tech: 'HTML, CSS, JavaScript',
+    image: `${import.meta.env.BASE_URL}projects/codecraft-website.png`,
+    github: 'https://github.com/mohamedabdellahalsayed-source/codecraft-website',
+    live: 'https://mohamedabdellahalsayed-source.github.io/codecraft-website/',
+  },
 ]
 
 function Projects() {
