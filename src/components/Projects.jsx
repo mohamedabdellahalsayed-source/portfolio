@@ -82,7 +82,16 @@ function Projects() {
                 {project.title}
               </h3>
               <p className="text-gray-400 text-sm mb-3">{project.description}</p>
-              <p className="text-[#AFA9EC] text-xs mb-4">{project.tech}</p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tech.split(', ').map((t) => (
+                  <span
+                    key={t}
+                    className="text-xs bg-[#7F77DD]/15 text-[#AFA9EC] border border-[#7F77DD]/30 px-2.5 py-1 rounded-full"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
 
               <div className="flex gap-4">
                 <a

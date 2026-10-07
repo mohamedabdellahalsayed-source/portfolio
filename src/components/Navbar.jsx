@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
 
   const handleDownload = () => {
     const cvPath = `${import.meta.env.BASE_URL}Mohamed_Abdellah_CV.pdf`
@@ -10,15 +11,39 @@ function Navbar() {
     link.href = cvPath
     link.download = 'Mohamed_Abdellah_CV.pdf'
     link.click()
+    link.remove()
   }
 
   const navLinks = [
     { label: 'About', href: '#about' },
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Designs', href: '#designs' },
     { label: 'Certificates', href: '#certificates' },
     { label: 'Contact', href: '#contact' },
   ]
+
+  useEffect(() => {
+    const sectionIds = navLinks.map((l) => l.href.slice(1))
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      { rootMargin: '-40% 0px -55% 0px' }
+    )
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-[#0f0f14]/90 backdrop-blur-md border-b border-white/10 z-50">
@@ -28,13 +53,23 @@ function Navbar() {
         </a>
 
         <ul className="hidden md:flex gap-8 text-gray-300 font-medium">
-          {navLinks.map((link) => (
-            <li key={link.label}>
-              <a href={link.href} className="hover:text-[#AFA9EC] transition">
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href.slice(1)
+            return (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  className={`transition relative pb-1 ${
+                    isActive
+                      ? 'text-[#AFA9EC] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#7F77DD] after:rounded-full'
+                      : 'hover:text-[#AFA9EC]'
+                  }`}
+                >
+                  {link.label}
+                </a>
+              </li>
+            )
+          })}
         </ul>
 
         <div className="flex items-center gap-3">
@@ -57,16 +92,21 @@ function Navbar() {
 
       {menuOpen && (
         <div className="md:hidden bg-[#0f0f14] border-t border-white/10 px-6 py-6 flex flex-col gap-4">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="text-gray-300 hover:text-[#AFA9EC] transition"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href.slice(1)
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className={`transition ${
+                  isActive ? 'text-[#AFA9EC] font-semibold' : 'text-gray-300 hover:text-[#AFA9EC]'
+                }`}
+              >
+                {link.label}
+              </a>
+            )
+          })}
           <button
             onClick={() => {
               handleDownload()

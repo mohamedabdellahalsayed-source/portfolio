@@ -6,8 +6,8 @@ function Hero() {
       </h1>
 
       <p className="text-xl text-gray-400 max-w-xl mb-6">
-        Aspiring Frontend Developer passionate about building clean,
-        interactive web experiences with React and Tailwind CSS.
+        Creative Frontend Developer & Social Media Designer passionate about building clean,
+        interactive web experiences and compelling visual content.
       </p>
 
       <div className="flex gap-4 mb-8">
