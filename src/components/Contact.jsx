@@ -1,11 +1,16 @@
+import { useLanguage } from '../context/useLanguage'
+
 function Contact() {
+    const { t } = useLanguage()
     return (
-        <section id="contact" className="reveal py-24 px-6 max-w-2xl mx-auto text-center scroll-mt-20 bg-[#0f0f14]">      <h2 className="text-3xl font-bold text-white mb-4">
-        Get In <span className="text-[#7F77DD]">Touch</span>
+        <section id="contact" className="reveal py-24 px-6 max-w-2xl mx-auto text-center scroll-mt-20 bg-[#0f0f14]">      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+          {t('Get In Touch')}
         </h2>
-        <p className="text-gray-400 mb-12">
-        Have an opportunity or a question? Feel free to reach out — I'd love to hear from you.
+        <p className="text-gray-400">
+          {t("Have an opportunity or a question? Feel free to reach out — I'd love to hear from you.")}
         </p>
+      </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
         <a
         href="mailto:mohamedabdellahalsayed@gmail.com"
@@ -15,8 +20,8 @@ function Contact() {
             ✉️
         </div>
         <div>
-            <h3 className="text-white font-medium mb-1">Email</h3>
-            <p className="text-gray-400 text-sm break-all">mohamedabdellahalsayed <br/> @gmail.com</p>
+            <h3 className="text-white font-medium mb-1">{t('Email')}</h3>
+            <p className="text-gray-400 text-sm break-all">mohamedabdellahalsayed@gmail.com</p>
         </div>
         </a>
         <a

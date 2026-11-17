@@ -1,6 +1,17 @@
 import { useState, useEffect } from 'react'
+import { useLanguage } from '../context/useLanguage'
+
+const navLinks = [
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Designs', href: '#designs' },
+  { label: 'Certificates', href: '#certificates' },
+  { label: 'Contact', href: '#contact' },
+]
 
 function Navbar() {
+  const { language, setLanguage, t } = useLanguage()
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('')
 
@@ -13,15 +24,6 @@ function Navbar() {
     link.click()
     link.remove()
   }
-
-  const navLinks = [
-    { label: 'About', href: '#about' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Designs', href: '#designs' },
-    { label: 'Certificates', href: '#certificates' },
-    { label: 'Contact', href: '#contact' },
-  ]
 
   useEffect(() => {
     const sectionIds = navLinks.map((l) => l.href.slice(1))
@@ -65,7 +67,7 @@ function Navbar() {
                       : 'hover:text-[#AFA9EC]'
                   }`}
                 >
-                  {link.label}
+                  {t(link.label)}
                 </a>
               </li>
             )
@@ -74,10 +76,18 @@ function Navbar() {
 
         <div className="flex items-center gap-3">
           <button
+            type="button"
+            onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')}
+            className="rounded-lg border border-white/15 px-3 py-2 text-sm font-semibold text-white transition hover:border-[#7F77DD] hover:text-[#AFA9EC]"
+            aria-label={language === 'en' ? 'Switch to Arabic' : 'Switch to English'}
+          >
+            {language === 'en' ? 'العربية' : 'English'}
+          </button>
+          <button
             onClick={handleDownload}
             className="hidden sm:inline-block bg-[#7F77DD] text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#534AB7] transition whitespace-nowrap"
           >
-            Download CV
+            {t('Download CV')}
           </button>
 
           <button
@@ -103,7 +113,7 @@ function Navbar() {
                   isActive ? 'text-[#AFA9EC] font-semibold' : 'text-gray-300 hover:text-[#AFA9EC]'
                 }`}
               >
-                {link.label}
+                {t(link.label)}
               </a>
             )
           })}
@@ -114,7 +124,7 @@ function Navbar() {
             }}
             className="bg-[#7F77DD] text-white px-5 py-2.5 rounded-lg font-medium hover:bg-[#534AB7] transition mt-2"
           >
-            Download CV
+            {t('Download CV')}
           </button>
         </div>
       )}

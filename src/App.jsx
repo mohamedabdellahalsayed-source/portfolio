@@ -10,6 +10,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
 import WhatsAppButton from './components/WhatsAppButton'
+import { LanguageProvider } from './context/LanguageContext.jsx'
 
 function App() {
   useEffect(() => {
@@ -32,19 +33,21 @@ function App() {
   }, [])
 
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Designs />
-      <Certificates />
-      <Contact />
-      <Footer />
-      <BackToTop />
-      <WhatsAppButton />
-    </>
+    <LanguageProvider>
+      <>
+        <Navbar />
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Designs />
+        <Certificates />
+        <Contact />
+        <Footer />
+        <BackToTop />
+        <WhatsAppButton />
+      </>
+    </LanguageProvider>
   )
 }
 
